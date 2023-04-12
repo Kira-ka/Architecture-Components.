@@ -78,7 +78,7 @@ class FeedFragment : Fragment() {
             adapter.refresh()
         }
 
-        binding.swiperefresh.setOnRefreshListener(adapter::refresh)
+        binding.swiperefresh.setOnRefreshListener { viewModel.refreshPosts() }
 
         binding.fab.setOnClickListener {
             findNavController().navigate(R.id.action_feedFragment_to_newPostFragment)
